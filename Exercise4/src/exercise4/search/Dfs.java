@@ -1,5 +1,6 @@
 package exercise4.search;
 
+import java.util.ArrayList;
 import java.util.Iterator;
 
 import rp13.search.interfaces.Agenda;
@@ -7,7 +8,8 @@ import rp13.search.interfaces.Agenda;
 
 class Dfs<ItemT> implements Agenda<ItemT>
 {
-
+	private ArrayList<ItemT> agenda;
+	
 	@Override
 	public Iterator<ItemT> iterator() {
 		// TODO Auto-generated method stub
@@ -16,26 +18,27 @@ class Dfs<ItemT> implements Agenda<ItemT>
 
 	@Override
 	public void push(ItemT _item) {
-		// TODO Auto-generated method stub
-		
+		agenda.add(_item);
+				
 	}
 
 	@Override
 	public ItemT pop() {
 		// TODO Auto-generated method stub
-		return null;
+		ItemT node = agenda.get(agenda.size()-1);
+		agenda.remove(agenda.size()-1);
+		return node;
 	}
 
 	@Override
 	public boolean isEmpty() {
-		// TODO Auto-generated method stub
-		return false;
+		return agenda.isEmpty();
 	}
 
 	@Override
 	public boolean contains(ItemT _item) {
 		// TODO Auto-generated method stub
-		return false;
+		return agenda.contains(_item);
 	}
 
 }
