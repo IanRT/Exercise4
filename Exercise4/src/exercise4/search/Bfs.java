@@ -6,7 +6,7 @@ import java.util.Iterator;
 import rp13.search.interfaces.Agenda;
 
 
-public class Dfs<ItemT> implements Agenda<ItemT>
+public class Bfs<ItemT> implements Agenda<ItemT>
 {
 	private ArrayList<ItemT> agenda;
 	
@@ -21,8 +21,8 @@ public class Dfs<ItemT> implements Agenda<ItemT>
 
 	@Override
 	public ItemT pop() {
-		ItemT node = agenda.get(agenda.size()-1);
-		agenda.remove(agenda.size()-1);
+		ItemT node = agenda.get(0);
+		agenda.remove(0);
 		return node;
 	}
 
