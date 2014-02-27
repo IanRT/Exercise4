@@ -5,10 +5,10 @@ import rp13.search.util.EqualityGoalTest;
 
 public class SearchAlgorithm<node, StateT, ItemT>
 {
-	public node search(StateT __goal)
+	public node bfsearch(StateT __goal)
 	{
 		EqualityGoalTest<StateT> test = new EqualityGoalTest<StateT>(_goal);
-		Agenda<ItemT> agenda = new Agenda<ItemT>;
+		Bfs<ItemT> agenda = new Bfs<ItemT>;
 		
 		while(!agenda.isEmpty())
 		{
