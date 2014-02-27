@@ -5,7 +5,7 @@ import rp13.search.util.EqualityGoalTest;
 
 public class SearchAlgorithm<node, StateT, ItemT>
 {
-	public node search(StateT __goal)
+	public node search(StateT _goal)
 	{
 		EqualityGoalTest<StateT> test = new EqualityGoalTest<StateT>(_goal);
 		Agenda<ItemT> agenda = new Agenda<ItemT>;
@@ -16,6 +16,7 @@ public class SearchAlgorithm<node, StateT, ItemT>
 			if(isGoal(node.getState()))
 			{
 				return node;
+				System.out.println("rawr");
 			}
 			else
 			{
