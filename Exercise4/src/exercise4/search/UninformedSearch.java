@@ -42,7 +42,7 @@ public class UninformedSearch<node, StateT, ItemT, ActionT>
 					theNode = theNode.getParent();
 					stack.add(theNode.getAction());
 				}
-				System.out.println(goal);
+				System.out.println(goal.toString());
 				return stack;
 			}
 			else
@@ -66,9 +66,6 @@ public class UninformedSearch<node, StateT, ItemT, ActionT>
 		
 		
 	}
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
-	}
+	
 
 }
