@@ -8,7 +8,7 @@ import rp13.search.interfaces.Agenda;
 
 public class Dfs<ItemT> implements Agenda<ItemT>
 {
-	private ArrayList<ItemT> agenda;
+	private ArrayList<ItemT> agenda = new ArrayList<ItemT>();
 	
 	
 	

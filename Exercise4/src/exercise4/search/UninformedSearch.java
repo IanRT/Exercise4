@@ -9,10 +9,11 @@ import rp13.search.interfaces.Agenda;
 import rp13.search.interfaces.SuccessorFunction;
 import rp13.search.util.*;
 
-public class UninformedSearch<node, StateT, ItemT, ActionT>
+public class UninformedSearch<ActionT, StateT>
 {
+	private ActionStatePair<ActionT, StateT> node;
 	private ActionStatePair<ActionT, StateT> theNode;
-	public Stack<ActionT> doSearch(StateT start, StateT goal, SuccessorFunction<ActionT, StateT> successorFn, Agenda<ActionStatePair<ActionT, StateT>> agenda)
+	public ArrayList<ActionT> doSearch(StateT start, StateT goal, SuccessorFunction<ActionT, StateT> successorFn, Agenda<ActionStatePair<ActionT, StateT>> agenda)
 	{
 		
 		EqualityGoalTest<StateT> test = new EqualityGoalTest<StateT>(goal);
@@ -20,6 +21,7 @@ public class UninformedSearch<node, StateT, ItemT, ActionT>
 		ArrayList<StateT> visited = new ArrayList<StateT>();
 		successorFn.getSuccessors(start, firstSuccessors);
 		visited.add(start);
+		assert(firstSuccessors != null);
 		for (ActionStatePair<ActionT, StateT> node: firstSuccessors) 
 		{
 			if(visited.contains(node.getState()) == false)
@@ -34,13 +36,13 @@ public class UninformedSearch<node, StateT, ItemT, ActionT>
 			visited.add(currNode.getState());
 			if(test.isGoal(currNode.getState()))
 			{
-				Stack<ActionT> stack = new Stack<ActionT>();
+				ArrayList<ActionT> stack = new ArrayList<ActionT>();
 				theNode = currNode;
-				stack.add(theNode.getAction());
+				stack.add(0, theNode.getAction());
 				while(theNode.getParent() != null)
 				{
 					theNode = theNode.getParent();
-					stack.add(theNode.getAction());
+					stack.add(0, theNode.getAction());
 				}
 				System.out.println(goal.toString());
 				return stack;
