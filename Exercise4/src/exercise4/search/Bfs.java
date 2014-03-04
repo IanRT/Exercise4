@@ -5,18 +5,14 @@ import java.util.Iterator;
 
 import rp13.search.interfaces.Agenda;
 
-
 public class Bfs<ItemT> implements Agenda<ItemT>
 {
 	private ArrayList<ItemT> agenda = new ArrayList<ItemT>();
 	
-	
-	
-
 	@Override
-	public void push(ItemT _item) {
+	public void push(ItemT _item)
+	{
 		agenda.add(_item);
-				
 	}
 
 	@Override
