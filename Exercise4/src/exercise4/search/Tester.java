@@ -1,8 +1,5 @@
 package exercise4.search;
 
-//import java.util.ArrayList;
-import java.util.Stack;
-
 import org.testng.annotations.Test;
 import org.testng.annotations.BeforeMethod;
 
@@ -45,6 +42,12 @@ public class Tester<ItemT> {
 	  UninformedSearch<PuzzleMove, EightPuzzle> searcher = new UninformedSearch<PuzzleMove, EightPuzzle>();
 	  System.out.println(puzzle.toString());
 	  System.out.println(searcher.doSearch(puzzle, goal, succs, dfs));
+  }
+  
+  public void temp()
+  {
+	  int comp = new Integer(5).compareTo(new Integer(7));
+	  System.out.println("temp test " + comp);
   }
  
 }
